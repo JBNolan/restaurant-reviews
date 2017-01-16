@@ -1,0 +1,17 @@
+<h3>Review Form for <%= @restaurant.name %></h3>
+
+<%= form_for [@restaurant, @review] do |f| %>
+  <div class="field">
+    <%= f.label :rating %> <br />
+    <%= f.number_field :rating %>
+  </div>
+
+  <div class="field">
+    <%= f.label :body, "Review" %> <br />
+    <%= f.text_field :body %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Add Review"%>
+  </div>
+<% end %>

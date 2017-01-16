@@ -1,0 +1,19 @@
+<h1>Restaurant Details</h1>
+
+<h2> <%= @restaurant.name %> </h2>
+
+<p> <%= @restaurant.address %> </p>
+<p> <%= @restaurant.city %>, <%= @restaurant.state %> </p>
+<p> <%= @restaurant.zip %> </p>
+
+<p> <%= @restaurant.description %> </p>
+
+<h3>Reviews</h3>
+<% @reviews.each do |review| %>
+  <p>Rating: <%= review.rating %> </p>
+  <p>Body: <%= review.body %> </p>
+  <p>Created: <%= review.created_at.strftime("%B %d %Y")%> </p>
+  </br>
+<% end %>
+
+<%= link_to "Add a Review", new_restaurant_review_path(@restaurant) %>

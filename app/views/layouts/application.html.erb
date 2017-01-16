@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>RestaurantReviews</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <% if notice.is_a?(Array) %>
+     <% notice.each do |this_notice| %>
+         <p class="notice"><%= this_notice %></p>
+     <% end %>
+   <% elsif notice %>
+     <p class="notice"><%= notice %></p>
+   <% end %>
+
+<%= yield %>
+
+</body>
+</html>
